@@ -20,11 +20,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     let status = 200,
         resultBody = { status: 'ok', message: 'Files were uploaded successfully' };
 
+
+    //console.log('### req (upload.ts)', req)
+    //console.log('### res (upload.ts)', res)
+
     /* Get files using formidable */
     const files = await new Promise<ProcessedFiles | undefined>((resolve, reject) => {
         
         let maxFileSize = 5000 * 1024 * 1024; // 300 = 300 MB / 5000 = 5GB
         const form = new formidable.IncomingForm({ uploadDir: './uploads/', keepExtensions: true, maxFileSize: maxFileSize, allowEmptyFiles: false });
+        console.log('### form (upload.ts)', form)
 
         const files: ProcessedFiles = [];
         form.on('file', function (field, file) {
@@ -42,6 +47,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             status: 'fail', message: 'Upload error'
         }
     });
+
+    console.log('### files (upload.ts)', files)
 
     if ((files as any)?.length) {
 

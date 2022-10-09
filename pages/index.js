@@ -15,6 +15,10 @@ export default function Home() {
                 <Link href="/react-dropzone-uploader">React Dropzone Uploader (Component)</Link>
               </li>
 
+              <li className='text-blue-600 dark:text-blue-500 hover:underline'>
+                <Link href="/custom-react-dropzone">Custom React Dropzone (Component)</Link>
+              </li>
+
           </ul>
       </div>
     </>

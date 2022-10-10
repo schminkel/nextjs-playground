@@ -187,8 +187,8 @@ export default class UploadFiles extends Component {
         {/*  Progress Bar Section  */} 
         {progressInfos &&
           progressInfos.map((progressInfo, index) => (
-            <div className="flex justify-center mx-auto w-full sm:w-[600px] p-8">
-              <div className="w-full" key={index}>
+            <div className="flex justify-center mx-auto w-full sm:w-[600px] p-8" key={index}>
+              <div className="w-full">
                 <span>{progressInfo.fileName}</span>
                 <div className="bg-gray-200 rounded-full dark:bg-gray-700">
                   <div
